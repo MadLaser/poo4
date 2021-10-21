@@ -42,16 +42,16 @@ $residential = new ResidentialWay();
 
 
 echo PHP_EOL;
-echo 'test pedestrian' . PHP_EOL;
+echo 'test pedestrian';
 $pedestrian->addVehicle($skateboard);
 $pedestrian->addVehicle($bicycle);
 $pedestrian->addVehicle($car);
 
-echo 'test Motor' . PHP_EOL;
+echo 'test Motor';
 $motor->addVehicle($car);
 $motor->addVehicle($bicycle);
 
-echo 'test residential' . PHP_EOL;
+echo 'test residential';
 $residential->addVehicle($skateboard);
 $residential->addVehicle($bicycle);
 $residential->addVehicle($car);
