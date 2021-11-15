@@ -8,6 +8,7 @@ class Car extends Vehicle
     protected string $energy;
     protected int $energyLevel = 100;
     protected bool $isEngineOn = false;
+    private bool $hasParkBrake = true;
 
     public function __construct(string $color, int $nbSeats, string $energy)
     {
@@ -19,6 +20,10 @@ class Car extends Vehicle
 
     public function start(): string
     {
+        if ($this->getHasParkBrake()) {
+            throw new Exception("This car is parked");
+        }
+
         if ($this->isEngineOn) {
             return 'Engine is already On';
         } else {
@@ -57,5 +62,15 @@ class Car extends Vehicle
     public function setIsEngineOn($isEngineOn): void
     {
         $this->isEngineOn = $isEngineOn;
+    }
+
+    public function setHasParkBrake(bool $hasParkBrake)
+    {
+        $this->hasParkBrake = $hasParkBrake;
+    }
+
+    public function getHasParkBrake(): bool
+    {
+        return $this->hasParkBrake;
     }
 }
