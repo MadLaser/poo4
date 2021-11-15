@@ -1,5 +1,5 @@
 <?php
-class Car extends Vehicle
+class Car extends Vehicle implements LightableInterface
 {
     public const ALLOWED_ENERGIES = [
         'Fuel',
@@ -16,6 +16,16 @@ class Car extends Vehicle
         $this->setEnergy($energy);
         $this->nbWheels = 4;
         $this->currentSpeed = 0;
+    }
+
+    public function switchOn(): bool
+    {
+        return true;
+    }
+
+    public function switchOff(): bool
+    {
+        return false;
     }
 
     public function start(): string
